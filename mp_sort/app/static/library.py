@@ -81,6 +81,7 @@ def sortnumber1():
 
 
 def sortnumber2():
+	# lydia test
 	'''	This function is used in Exercise 2.
 		The function is called when the sort button is clicked.
 
