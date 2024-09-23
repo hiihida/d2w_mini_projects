@@ -99,13 +99,18 @@ def sortnumber2():
 	if value == "":
 		window.alert("Your textbox is empty")
 		return
+	else:
+		print(value)
+		x = value.split(",")
+		ls = []
+		for i in x:
+			#changed_type = int(i)
+			ls.append(int(i))
+		print(ls)
+		sorted_list = insertion_sort(ls)
 
-	# Your code should start from here
-	# store the final string to the variable array_str
-	pass
+		array_str = ls_to_str(sorted_list)
 
-	array_str = None
-
-	document.getElementById("sorted").innerHTML = array_str
+		document.getElementById("sorted").innerHTML = array_str
 
 
