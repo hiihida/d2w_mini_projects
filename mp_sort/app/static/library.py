@@ -113,20 +113,44 @@ def sortnumber2():
 
 		document.getElementById("sorted").innerHTML = array_str
 	#madhu's part below 
-	import random 
-	def sortnumber2(value):
-	## defining the function sortnumber2 as value
-	## number_as_string is a variable that i used containing the value ->  splitting the number that is present as strings using the .split function 
-	## separating the string value by commas 
-	## to convert the string to integer need to put int.
-		number_as_string = value.split(',')
-	##to remove the white spaces use the .strip function. need to have a list of numbers
-	## created a function number_as_list that contains a list of numbers AS INTEGERS
-		number_as_list = [ int(num.strip()) for num in number_as_string]
-	## to sort the numbers need to use the sort function 
-		number_as_list.sort()
-	## to change the sorted list back to string and store it to array_str 
-		array_str = ','.join(str(num)) for num in number_as_list
-	return array_str
+	def sortnumber2():
+	'''	This function is used in Exercise 2.
+		The function is called when the sort button is clicked.
+
+		You need to do the following:
+		- Get the numbers from a string variable "value".
+		- Split the string using comma as the separator and convert them to 
+			a list of numbers
+		- call your sort function, either bubble sort or insertion sort
+		- create a string of the sorted numbers and store it in array_str
+	'''
+	# The following line get the value of the text input called "numbers"
+	value = document.getElementsByName("numbers")[0].value
+
+	# Throw alert and stop if nothing in the text input
+	if value == "":
+		window.alert("Your textbox is empty")
+		return
+
+	# to store the list that is comverted from a string
+	new_array = []
+
+	# to clean up any whitespaces within the new list in new_array 
+	clean_string = value.strip()
+	# to convert the string into a list 
+
+	new_list = clean_string.split(",")
+	# to convert all the elements in the new_list to integers
+	for i in new_list:
+		i = int(i)
+		# to add the new int values into a array called 'new_array'
+	new_array.append(i)
+	# calls 'bubble_sort' to sort the list and and store in new variable 'sorted_array'
+	sorted_array = bubble_sort(new_array)
+	# to convert the array to string:
+	array_str = array_to_string(sorted_array)
+	print(array_str)
+
+	document.getElementById("sorted").innerHTML = array_str
 		
 		
