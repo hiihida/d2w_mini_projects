@@ -120,12 +120,13 @@ def sortnumber2():
 	## separating the string value by commas 
 	## to convert the string to integer need to put int.
 		number_as_string = value.split(',')
-	##to remove the white spaces use the .strip function. need to have a list of numbers 
-		number = [ int(num.strip()) for num in number_as_string]
+	##to remove the white spaces use the .strip function. need to have a list of numbers
+	## created a function number_as_list that contains a list of numbers AS INTEGERS
+		number_as_list = [ int(num.strip()) for num in number_as_string]
 	## to sort the numbers need to use the sort function 
-		number.sort()
+		number_as_list.sort()
 	## to change the sorted list back to string and store it to array_str 
-		array_str = ','.join(str(num)) for num in number
+		array_str = ','.join(str(num)) for num in number_as_list
 	return array_str
 		
 		
