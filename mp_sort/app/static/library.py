@@ -112,16 +112,18 @@ def sortnumber2():
 		array_str = ls_to_str(sorted_list)
 
 		document.getElementById("sorted").innerHTML = array_str
+	#madhu's part below 
 	import random 
 	def sortnumber2(value):
 	## defining the function sortnumber2 as value
-	## number_as_string -> to split the number that is present as strings using the .split function. 
+	## number_as_string is a variable that i used containing the value ->  splitting the number that is present as strings using the .split function 
+	## separating the string value by commas 
 	## to convert the string to integer need to put int.
 		number_as_string = value.split(',')
-		##to remove the white spaces use the .strip function. need to have a list of numbers 
+	##to remove the white spaces use the .strip function. need to have a list of numbers 
 		number = [ int(num.strip()) for num in number_as_string]
 	## to sort the numbers need to use the sort function 
-		numbers.sort()
+		number.sort()
 	## to change the sorted list back to string and store it to array_str 
 		array_str = ','.join(str(num)) for num in number
 	return array_str
