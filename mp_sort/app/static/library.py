@@ -14,12 +14,10 @@ def gen_random_int(number, seed):
 def generate():
 	number = 10
 	seed = 200
-	array = []
 
 	# call gen_random_int() with the given number and seed
 	# store it to the variable array
-	for i in range(number):
-		array.append(gen_random_int(number, seed))
+	array = gen_random_int(number, seed)
 	print(array)
 
 	# convert the items into one single string 
