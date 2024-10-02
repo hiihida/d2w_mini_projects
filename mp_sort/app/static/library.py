@@ -53,6 +53,7 @@ def insertion_sort(array):
 
 
 def sortnumber1():
+	# hida's part
 	'''	This function is used in Exercise 1.
 		The function is called when the sort button is clicked.
 
@@ -101,6 +102,7 @@ def sortnumber2():
 		return
 	else:
 		print(value)
+		# madhu's part
 		x = value.split(",")
 		ls = []
 		for i in x:
@@ -112,6 +114,7 @@ def sortnumber2():
 		array_str = ls_to_str(sorted_list)
 
 		document.getElementById("sorted").innerHTML = array_str
+	"""
 	#madhu's part below 
 	def sortnumber2():
 	'''	This function is used in Exercise 2.
@@ -152,5 +155,6 @@ def sortnumber2():
 	print(array_str)
 
 	document.getElementById("sorted").innerHTML = array_str
+	"""
 		
 		
