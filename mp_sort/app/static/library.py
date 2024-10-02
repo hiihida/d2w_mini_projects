@@ -3,10 +3,13 @@ import random
 
 def gen_random_int(number, seed):
 
-	random.seed(seed)
-	result = random.randint(-10, 10)
-	#print(result)
-	return result
+    result = []
+    random.seed(seed)
+    for i in range(number):
+        result.append(i)
+
+    random.shuffle(result)
+    return result
 
 def generate():
 	number = 10
