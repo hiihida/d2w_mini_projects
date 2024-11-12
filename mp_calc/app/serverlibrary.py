@@ -1,7 +1,43 @@
 
+def merge(array: list, p: int, q: int, r: int) -> None:
+  nleft = q - p + 1  # Number of elements in left subarray
+  nright = r - q  # Number of elements in right subarray
+
+  left_array = array[p: q + 1]  
+  right_array = array[q + 1: r + 1]
+
+  left = 0
+  right = 0
+  dest = p
+
+  while left < nleft and right < nright:
+    if left_array[left] <= right_array[right]:
+      array[dest] = left_array[left]
+      left += 1
+    else:
+      array[dest] = right_array[right]
+      right += 1
+      dest += 1
+
+  while left < nleft:
+    array[dest] = left_array[left]
+    left += 1
+    dest += 1
+
+  while right < nright:
+    array[dest] = right_array[right]
+    right += 1
+    dest += 1
+
+def mergesort_recursive(array: list, p: int, r: int, byfunc) -> None:
+  if p < r:
+    q = (p + r) // 2
+    mergesort_recursive(array, p, q, byfunc)
+    mergesort_recursive(array, q + 1, r, byfunc)
+    merge(array, p, q, r, byfunc)
 
 def mergesort(array, byfunc=None):
-  pass
+  mergesort_recursive(array, 0, len(array) - 1, byfunc)
 
 class Stack:
     def __init__(self) -> None:
