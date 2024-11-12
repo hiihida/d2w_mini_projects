@@ -1,5 +1,4 @@
-
-def merge(array: list, p: int, q: int, r: int) -> None:
+def merge(array: list, p: int, q: int, r: int, byfunc) -> None:
   nleft = q - p + 1  # Number of elements in left subarray
   nright = r - q  # Number of elements in right subarray
 
@@ -11,13 +10,13 @@ def merge(array: list, p: int, q: int, r: int) -> None:
   dest = p
 
   while left < nleft and right < nright:
-    if left_array[left] <= right_array[right]:
+    if byfunc(left_array[left]) <= byfunc(right_array[right]):
       array[dest] = left_array[left]
       left += 1
     else:
       array[dest] = right_array[right]
       right += 1
-      dest += 1
+    dest += 1
 
   while left < nleft:
     array[dest] = left_array[left]
